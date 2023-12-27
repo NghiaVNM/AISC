@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/BenTre_BaLai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Cửa Ba Lai" />
+    <item
+        android:id="@+id/BenTre_CoChien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Cửa Cổ Chiên" />
+    <item
+        android:id="@+id/BenTre_Dai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Cửa Đại" />
+    <item
+        android:id="@+id/BenTre_HamLuong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Cửa Hàm Luông" />
+</menu>

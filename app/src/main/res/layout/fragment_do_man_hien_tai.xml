@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/DoManHienTai_QuayLai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="Quay lại"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/baseline_arrow_back_ios_24" />
+
+    <Button
+        android:id="@+id/ViTri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vị trí" />
+
+    <Button
+        android:id="@+id/CuaSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cửa sông" />
+
+    <Button
+        android:id="@+id/Tram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trạm" />
+
+    <Button
+        android:id="@+id/ThoiGianDuBao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thời gian dự báo" />
+
+    <Button
+        android:id="@+id/XemDoMan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xem độ mặn" />
+
+</LinearLayout>

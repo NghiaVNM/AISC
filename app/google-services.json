@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "25758203373",
+    "project_id": "salty-6369b",
+    "storage_bucket": "salty-6369b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25758203373:android:cafe33930938ab8ec9bbe4",
+        "android_client_info": {
+          "package_name": "com.example.salty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVLxajl4jE7irYKG-H7_DfokS3aRTTScw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

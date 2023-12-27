@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/motuantoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="1 tuần tới" />
+    <item
+        android:id="@+id/haituantoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="2 tuần tới" />
+    <item
+        android:id="@+id/motthangtoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="1 tháng tới" />
+    <item
+        android:id="@+id/bathangtoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="3 tháng tới" />
+</menu>
