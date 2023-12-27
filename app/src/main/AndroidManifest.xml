@@ -19,29 +19,6 @@
             android:theme="@style/Theme.Salty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity2"
-            android:exported="true"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Salty">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Login"
-            android:exported="true"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.Salty">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
