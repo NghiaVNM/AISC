@@ -2,11 +2,21 @@ package com.example.salty;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +24,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class CongDongFragment extends Fragment {
-
+    private TextView textView;
+    private DatabaseReference databaseReference;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -58,7 +69,50 @@ public class CongDongFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cong_dong, container, false);
+        View view = inflater.inflate(R.layout.fragment_cong_dong, container, false);
+
+        textView = view.findViewById(R.id.CongDong_view); // Ánh xạ TextView
+
+        Button buttonLoadData = view.findViewById(R.id.LoadData);
+        databaseReference = FirebaseDatabase.getInstance().getReference("/user/-NmlJNn65VSWk8vLkFjg");
+
+        buttonLoadData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            String email = dataSnapshot.child("Email").getValue(String.class);
+                            String fullName = dataSnapshot.child("Ho va ten").getValue(String.class);
+                            String password = dataSnapshot.child("Password").getValue(String.class);
+                            String homeTown = dataSnapshot.child("Que quan").getValue(String.class);
+
+                            String userData = "Email: " + email + "\n" +
+                                    "Full Name: " + fullName + "\n" +
+                                    "Password: " + password + "\n" +
+                                    "Home Town: " + homeTown;
+
+                            if (textView != null) {
+                                textView.setText(userData); // Kiểm tra textView khác null trước khi gọi setText()
+                            }
+                        } else {
+                            if (textView != null) {
+                                textView.setText("Data does not exist");
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        if (textView != null) {
+                            textView.setText("Error: " + databaseError.getMessage());
+                        }
+                    }
+                });
+            }
+        });
+
+        return view;
     }
 }

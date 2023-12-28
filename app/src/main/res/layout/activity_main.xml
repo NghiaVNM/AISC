@@ -15,23 +15,25 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <!--
+        <View
+            android:id="@+id/TrangCaNhan"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/baseline_person_24"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <View
-                android:id="@+id/TrangCaNhan"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/baseline_person_24"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
 
+            <!--
             <TextView
                 android:id="@+id/user_details"
                 android:layout_width="wrap_content"
@@ -49,6 +51,7 @@
                 app:layout_constraintTop_toBottomOf="@id/user_details"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
+              -->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>

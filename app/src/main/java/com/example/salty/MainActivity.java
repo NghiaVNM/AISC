@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         auth = FirebaseAuth.getInstance();
-        button = findViewById(R.id.logout);
-        textView = findViewById(R.id.user_details);
+        //button = findViewById(R.id.logout);
+        //textView = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
-
+        /*
         if(user == null) {
             Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
@@ -57,48 +57,51 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
+        */
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         frameLayout = findViewById(R.id.frameLayout);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+                Fragment selectedFragment = null;
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.trangchu) {
 
-                    loadFragment(new TrangChuFragment(), false);
+                    selectedFragment = new TrangChuFragment();
 
                 } else if (itemId == R.id.doman) {
-                    loadFragment(new DoManFragment(), false);
+                    selectedFragment = new DoManFragment();
 
                 } else if (itemId == R.id.theodoi) {
-                    loadFragment(new TheoDoiFragment(), false);
+                    selectedFragment = new TheoDoiFragment();
 
                 } else { // Cong dong
-                    loadFragment(new CongDongFragment(), false);
+                    selectedFragment = new CongDongFragment();
 
                 }
-
-                return false;
+                loadFragment(selectedFragment);
+                return true;
             }
     });
 
-        loadFragment(new CongDongFragment(), true);
+        loadFragment(new CongDongFragment());
     }
 
-    private void loadFragment(Fragment fragment, boolean isAppInitialized) {
+    private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        if(isAppInitialized) {
-            fragmentTransaction.add(R.id.frameLayout, fragment);
-        } else {
-            fragmentTransaction.replace(R.id.frameLayout, fragment);
-
+        // Xóa Fragment hiện tại (nếu có)
+        Fragment currentFragment = fragmentManager.findFragmentById(R.id.frameLayout);
+        if (currentFragment != null) {
+            fragmentTransaction.remove(currentFragment);
         }
+
+        // Thêm hoặc thay thế Fragment mới
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.addToBackStack(null); // (Tùy chọn) Thêm Fragment vào BackStack
 
         fragmentTransaction.commit();
     }
