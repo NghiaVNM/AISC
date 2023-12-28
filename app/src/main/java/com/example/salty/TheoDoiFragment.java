@@ -1,5 +1,7 @@
 package com.example.salty;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,6 +59,22 @@ public class TheoDoiFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        // Lấy SharedPreferences trong Fragment
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+
+        // Lấy userId từ SharedPreferences
+        String userId = sharedPreferences.getString("user_id", null);
+
+        if (userId != null) {
+            // Nếu userId tồn tại, bạn có thể sử dụng nó ở đây
+            // Ví dụ:
+            Toast.makeText(requireContext(), "User ID: " + userId, Toast.LENGTH_SHORT).show();
+        } else {
+            // Nếu không có userId trong SharedPreferences
+            Toast.makeText(requireContext(), "User ID không tồn tại", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
@@ -87,4 +106,5 @@ public class TheoDoiFragment extends Fragment {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
 }

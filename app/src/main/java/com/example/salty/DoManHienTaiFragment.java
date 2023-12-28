@@ -2,6 +2,10 @@ package com.example.salty;
 
 import android.os.Bundle;
 
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,6 +22,7 @@ import android.widget.Button;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.widget.Toast;
+
 
 
 /**
@@ -65,11 +70,23 @@ public class DoManHienTaiFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_do_man_hien_tai, container, false);
+
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true); // Hiển thị nút quay lại
+            // Hoặc
+            // actionBar.setDisplayHomeAsUpEnabled(false); // Ẩn nút quay lại
+        }
+
 
         Button vitri = view.findViewById(R.id.ViTri);
         vitri.setOnClickListener(new View.OnClickListener() {

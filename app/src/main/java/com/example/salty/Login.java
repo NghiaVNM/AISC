@@ -3,7 +3,9 @@ package com.example.salty;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,24 +20,23 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
 
-    TextInputEditText editTextEmail, getEditTextPassword;
+    TextInputEditText editTextEmail, editTextPassword;
     Button buttonLogin;
-    FirebaseAuth mAuth;
     ProgressBar progressBar;
     TextView textView;
 
     @Override
     public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
+
     }
 
     @Override
@@ -43,9 +44,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mAuth = FirebaseAuth.getInstance();
         editTextEmail = findViewById(R.id.email);
-        getEditTextPassword = findViewById(R.id.password);
+        editTextPassword = findViewById(R.id.password);
         buttonLogin = findViewById(R.id.dangnhap);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.registerNow);
@@ -65,36 +65,65 @@ public class Login extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
                 String email, password;
                 email = String.valueOf(editTextEmail.getText());
-                password = String.valueOf(getEditTextPassword.getText());
+                password = String.valueOf(editTextPassword.getText());
 
-                if(TextUtils.isEmpty(email)) {
+                if (TextUtils.isEmpty(email)) {
                     Toast.makeText(Login.this, "Nhập email", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)) {
+                if (TextUtils.isEmpty(password)) {
                     Toast.makeText(Login.this, "Nhập mật khẩu", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
-                                    Toast.makeText(Login.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+                // Thực hiện truy vấn để kiểm tra tài khoản và mật khẩu
+                DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("user");
+                userRef.orderByChild("Email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        progressBar.setVisibility(View.GONE);
+                        boolean accountExists = false;
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            String userEmail = snapshot.child("Email").getValue(String.class);
+                            String userPassword = snapshot.child("Password").getValue(String.class);
+                            String userId = snapshot.getKey(); // Lấy ID người dùng
 
+                            if (userEmail != null && userEmail.equals(email) && userPassword != null && userPassword.equals(password)) {
+                                // Tài khoản và mật khẩu chính xác
+                                Toast.makeText(Login.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                                // Thực hiện các hoạt động cần thiết sau khi đăng nhập thành công
+                                // Ví dụ: chuyển hướng đến màn hình chính
+                                accountExists = true;
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                                // Lưu userId vào SharedPreferences sau khi đăng nhập thành công
+                                saveUserIdToSharedPreferences(userId);
+
+                                break;
+                            }
+                        }
+                        if (!accountExists) {
+                            // Tài khoản không tồn tại hoặc mật khẩu không đúng
+                            Toast.makeText(Login.this, "Tài khoản hoặc mật khẩu không chính xác", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        progressBar.setVisibility(View.GONE);
+                        Toast.makeText(Login.this, "Đã xảy ra lỗi: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
+    }
+    // Hàm để lưu userId vào SharedPreferences
+    private void saveUserIdToSharedPreferences(String userId) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("user_id", userId);
+        editor.apply();
     }
 }

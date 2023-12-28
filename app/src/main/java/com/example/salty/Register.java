@@ -18,24 +18,24 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Register extends AppCompatActivity {
 
-    TextInputEditText editTextEmail, getEditTextPassword;
+    TextInputEditText editTextEmail, editTextPassword;
     Button buttonReg;
-    FirebaseAuth mAuth;
     ProgressBar progressBar;
     TextView textView;
+
 
     @Override
     public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
+
     }
 
     @Override
@@ -43,9 +43,8 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mAuth = FirebaseAuth.getInstance();
         editTextEmail = findViewById(R.id.email);
-        getEditTextPassword = findViewById(R.id.password);
+        editTextPassword = findViewById(R.id.password);
         buttonReg = findViewById(R.id.dangky);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.loginNow);
@@ -65,7 +64,7 @@ public class Register extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
                 String email, password;
                 email = String.valueOf(editTextEmail.getText());
-                password = String.valueOf(getEditTextPassword.getText());
+                password = String.valueOf(editTextPassword.getText());
 
                 if(TextUtils.isEmpty(email)) {
                     Toast.makeText(Register.this, "Nhập email", Toast.LENGTH_SHORT).show();
@@ -77,25 +76,43 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                FirebaseDatabase.getInstance().getReference("/user")
+                        .orderByChild("Email")
+                        .equalTo(email)
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if (dataSnapshot.exists()) {
+                                    // Email đã tồn tại
+                                    Toast.makeText(Register.this, "Email đã tồn tại", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.GONE);
+                                } else {
+                                    // Email chưa tồn tại, tiến hành tạo tài khoản và ghi vào database
+                                    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("/user").push();
+                                    String userId = userRef.getKey(); // Lấy ID mới
 
-                                    Toast.makeText(Register.this, "Tạo tài khoản thành công",
-                                            Toast.LENGTH_SHORT).show();
+                                    // Thêm thông tin người dùng vào nút /user
+                                    userRef.child("Id").setValue(userId);
+                                    userRef.child("Email").setValue(email);
+                                    userRef.child("Password").setValue(password);
+                                    // Các thông tin khác của người dùng
+                                    // ...
+
+                                    progressBar.setVisibility(View.GONE);
+
+                                    Toast.makeText(Register.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), Login.class);
                                     startActivity(intent);
                                     finish();
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(Register.this, "Tạo tài khoản thất bại",
-                                            Toast.LENGTH_SHORT).show();
                                 }
                             }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                // Xảy ra lỗi khi đọc dữ liệu
+                            }
                         });
+
             }
         });
     }
