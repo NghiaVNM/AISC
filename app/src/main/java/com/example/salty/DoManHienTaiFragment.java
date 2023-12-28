@@ -78,14 +78,27 @@ public class DoManHienTaiFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_do_man_hien_tai, container, false);
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(toolbar);
 
-        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
         if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayHomeAsUpEnabled(true); // Hiển thị nút quay lại
-            // Hoặc
-            // actionBar.setDisplayHomeAsUpEnabled(false); // Ẩn nút quay lại
         }
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xử lý sự kiện khi nút quay lại được nhấn
+                // Ví dụ: Quay lại Fragment trước đó hoặc Activity gọi Fragment này
+                if (getFragmentManager() != null) {
+                    getFragmentManager().popBackStack(); // Quay lại Fragment trước đó
+                } else {
+                    requireActivity().onBackPressed(); // Quay lại Activity gọi Fragment này
+                }
+                actionBar.setDisplayHomeAsUpEnabled(false);
+            }
+        });
 
 
         Button vitri = view.findViewById(R.id.ViTri);
