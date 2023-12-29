@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
+    private ImageButton buttonCaNhan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         frameLayout = findViewById(R.id.frameLayout);
+        buttonCaNhan = findViewById(R.id.profileButton);
+
+        buttonCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new CaNhanFragment());
+            }
+        });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
