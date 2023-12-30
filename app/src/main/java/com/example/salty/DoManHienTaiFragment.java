@@ -229,6 +229,14 @@ public class DoManHienTaiFragment extends Fragment {
             }
         });
 
+        Button xemdoman = view.findViewById(R.id.XemDoMan);
+        xemdoman.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new GiaiPhapFragment(), false);
+            }
+        });
+
         return view;
     }
 

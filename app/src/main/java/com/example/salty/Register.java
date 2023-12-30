@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Register extends AppCompatActivity {
 
-    TextInputEditText editTextEmail, editTextPassword;
+    TextInputEditText editTextEmail, editTextPassword, editTextPassword2;
     Button buttonReg;
     ProgressBar progressBar;
     TextView textView;
@@ -45,6 +45,7 @@ public class Register extends AppCompatActivity {
 
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
+        editTextPassword2 = findViewById(R.id.password2);
         buttonReg = findViewById(R.id.dangky);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.loginNow);
@@ -62,9 +63,10 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
-                String email, password;
+                String email, password, password2;
                 email = String.valueOf(editTextEmail.getText());
                 password = String.valueOf(editTextPassword.getText());
+                password2 = String.valueOf(editTextPassword2.getText());
 
                 if(TextUtils.isEmpty(email)) {
                     Toast.makeText(Register.this, "Nhập email", Toast.LENGTH_SHORT).show();
@@ -73,6 +75,11 @@ public class Register extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(password)) {
                     Toast.makeText(Register.this, "Nhập mật khẩu", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(password2) || !password.equals(password2)) {
+                    Toast.makeText(Register.this, "Nhập lại mật khẩu", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

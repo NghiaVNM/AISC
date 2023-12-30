@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
     });
 
-        loadFragment(new CongDongFragment());
+        loadFragment(new TrangChuFragment());
     }
 
     private void loadFragment(Fragment fragment) {
