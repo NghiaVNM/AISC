@@ -83,47 +83,7 @@ public class CongDongFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cong_dong, container, false);
 
-        textView = view.findViewById(R.id.CongDong_view); // Ánh xạ TextView
 
-        Button buttonLoadData = view.findViewById(R.id.LoadData);
-        databaseReference = FirebaseDatabase.getInstance().getReference("/user/-NmlJNn65VSWk8vLkFjg");
-
-        buttonLoadData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            String email = dataSnapshot.child("Email").getValue(String.class);
-                            String fullName = dataSnapshot.child("Ho va ten").getValue(String.class);
-                            String password = dataSnapshot.child("Password").getValue(String.class);
-                            String homeTown = dataSnapshot.child("Que quan").getValue(String.class);
-
-                            String userData = "Email: " + email + "\n" +
-                                    "Full Name: " + fullName + "\n" +
-                                    "Password: " + password + "\n" +
-                                    "Home Town: " + homeTown;
-
-                            if (textView != null) {
-                                textView.setText(userData); // Kiểm tra textView khác null trước khi gọi setText()
-                            }
-                        } else {
-                            if (textView != null) {
-                                textView.setText("Data does not exist");
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        if (textView != null) {
-                            textView.setText("Error: " + databaseError.getMessage());
-                        }
-                    }
-                });
-            }
-        });
 
         return view;
     }

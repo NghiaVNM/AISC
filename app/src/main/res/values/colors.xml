@@ -6,4 +6,5 @@
     <color name="my_status_bar_color">#FF4081</color>
     <color name="facebook">#0B64F1</color>
     <color name="google">#DCDCDC</color>
+    <color name="grey">#808080</color>
 </resources>
