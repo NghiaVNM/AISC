@@ -1,0 +1,10 @@
+<!-- Trong file res/values/styles.xml -->
+<resources>
+    <!-- Chọn một theme có sẵn hoặc tạo theme mới -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Đặt các thuộc tính của theme, ví dụ: màu sắc, font chữ, v.v. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+</resources>

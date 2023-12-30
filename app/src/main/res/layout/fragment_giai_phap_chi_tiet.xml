@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GiaiPhapChiTietFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/gia2"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="3dp">
+
+                <TextView
+                    android:id="@+id/tengiaiphap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Giải pháp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="30dp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/hinh"
+                android:layout_width="390dp"
+                android:layout_height="250dp"
+                android:src="@drawable/giaiphap3"
+                android:scaleType="fitXY"
+                android:paddingVertical="20dp"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loại giải pháp: "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:paddingLeft="30dp"/>
+
+                <TextView
+                    android:id="@+id/loai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Công trình thủy lợi"
+                    android:textSize="20dp"
+                    android:paddingRight="30dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Độ mặn: "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:paddingLeft="30dp"/>
+
+                <TextView
+                    android:id="@+id/doman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 - 10"
+                    android:textSize="20dp"
+                    android:paddingRight="30dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chi phí: "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:paddingLeft="30dp"/>
+
+                <TextView
+                    android:id="@+id/chiphi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="40.000.000 - 100.000.000"
+                    android:textSize="20dp"
+                    android:paddingRight="30dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cách thực hiện: "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:paddingLeft="30dp"/>
+
+                <TextView
+                    android:id="@+id/cach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Lựa chọn Máy Lọc Nước RO: Chọn máy lọc nước RO phù hợp với nhu cầu của gia đình hoặc doanh nghiệp của bạn. Máy lọc nước RO có thể có các tính năng và công suất khác nhau."
+                    android:textSize="20dp"
+                    android:paddingRight="30dp"
+                    android:paddingLeft="40dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/donvi"
+                android:theme="@style/Theme.Salty"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/donvi"
+                android:text="Đơn vị cung cấp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:paddingHorizontal="20dp"/>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</FrameLayout>

@@ -4,7 +4,7 @@
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!-- Thiết lập màu cho thanh trạng thái -->
-        <item name="android:statusBarColor">@color/my_status_bar_color</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 
     <style name="Theme.Salty" parent="Base.Theme.Salty" />

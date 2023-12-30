@@ -31,8 +31,10 @@
                     android:textSize="30dp"/>
             </LinearLayout>
 
+
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="5dp"/>
 
             <LinearLayout
@@ -49,6 +51,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten1"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -71,6 +74,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -103,6 +107,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten2"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -125,6 +130,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -157,6 +163,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten3"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -179,6 +186,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -209,6 +217,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten4"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -231,6 +240,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -261,6 +271,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten5"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -283,6 +294,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -313,6 +325,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten6"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -335,6 +348,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -365,6 +379,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten7"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -387,6 +402,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -417,6 +433,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten8"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -439,6 +456,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -469,6 +487,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten9"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -491,6 +510,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -521,6 +541,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten10"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -543,6 +564,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -573,6 +595,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten11"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -595,6 +618,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
@@ -625,6 +649,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/ten12"
                         android:paddingLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -647,6 +672,7 @@
                     android:layout_gravity="center">
 
                     <Button
+                        android:id="@+id/gp12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimary"
