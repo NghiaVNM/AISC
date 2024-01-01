@@ -73,6 +73,22 @@ public class DoManFragment extends Fragment {
             }
         });
 
+        Button dubao = view.findViewById(R.id.DuBaoDoMan);
+        dubao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new DuBaoDoManFragment(), false);
+            }
+        });
+
+        Button gp = view.findViewById(R.id.GiaiPhap);
+        gp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new GiaiPhapFragment(), false);
+            }
+        });
+
         return view;
     }
 

@@ -7,6 +7,9 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -82,6 +85,29 @@ public class GiaiPhapChiTietFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         View view = inflater.inflate(R.layout.fragment_giai_phap_chi_tiet, container, false);
+
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(toolbar);
+
+        ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayHomeAsUpEnabled(true); // Hiển thị nút quay lại
+        }
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xử lý sự kiện khi nút quay lại được nhấn
+                // Ví dụ: Quay lại Fragment trước đó hoặc Activity gọi Fragment này
+                if (getFragmentManager() != null) {
+                    getFragmentManager().popBackStack(); // Quay lại Fragment trước đó
+                } else {
+                    requireActivity().onBackPressed(); // Quay lại Activity gọi Fragment này
+                }
+                actionBar.setDisplayHomeAsUpEnabled(false);
+            }
+        });
 
         SharedPreferences prefs = getActivity().getSharedPreferences("giai_phap", Context.MODE_PRIVATE);
         String tengp = prefs.getString("ten", "default_value");

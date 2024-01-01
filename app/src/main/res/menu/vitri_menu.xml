@@ -21,4 +21,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Cà Mau" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Cần Thơ" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Đồng Tháp" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Hậu Giang" />
+    <item
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Kiên Giang" />
+    <item
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Long An" />
+    <item
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Sóc Trăng" />
+    <item
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Tiền Giang" />
+    <item
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Trà Vinh" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Vĩnh Long" />
 </menu>

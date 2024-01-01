@@ -1,29 +1,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="10dp"
+    android:layout_gravity="center">
 
     <Button
         android:id="@+id/DoManHienTai"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Độ mặn hiện tại" />
+        android:layout_height="150dp"
+        android:text="Độ mặn hiện tại"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:background="@drawable/gia"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
 
     <Button
         android:id="@+id/DuBaoDoMan"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Dự báo độ mặn" />
+        android:layout_height="150dp"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:text="Dự báo độ mặn"
+        android:background="@drawable/gia"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
 
     <Button
         android:id="@+id/GiaiPhap"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Giải pháp" />
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:layout_height="150dp"
+        android:text="Giải pháp"
+        android:background="@drawable/gia"/>
 
 </LinearLayout>

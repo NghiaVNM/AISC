@@ -1,10 +1,10 @@
+
 package com.example.salty;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -14,20 +14,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.PopupMenu;
-import android.widget.PopupMenu.OnMenuItemClickListener;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,19 +32,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DoManHienTaiFragment#newInstance} factory method to
+ * Use the {@link DuBaoDoManFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DoManHienTaiFragment extends Fragment {
+public class DuBaoDoManFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,12 +49,13 @@ public class DoManHienTaiFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
     private String _vitri = "";
     private String _cuasong = "";
     private String _tram = "";
     private String _thoigian = "";
 
-    public DoManHienTaiFragment() {
+    public DuBaoDoManFragment() {
         // Required empty public constructor
     }
 
@@ -75,11 +65,11 @@ public class DoManHienTaiFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DoManHienTaiFragment.
+     * @return A new instance of fragment DuBaoDoManFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DoManHienTaiFragment newInstance(String param1, String param2) {
-        DoManHienTaiFragment fragment = new DoManHienTaiFragment();
+    public static DuBaoDoManFragment newInstance(String param1, String param2) {
+        DuBaoDoManFragment fragment = new DuBaoDoManFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -95,11 +85,12 @@ public class DoManHienTaiFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_do_man_hien_tai, container, false);
+        View view = inflater.inflate(R.layout.fragment_du_bao_do_man, container, false);
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         ((AppCompatActivity) requireActivity()).setSupportActionBar(toolbar);
@@ -123,7 +114,6 @@ public class DoManHienTaiFragment extends Fragment {
                 actionBar.setDisplayHomeAsUpEnabled(false);
             }
         });
-
 
         Button vitri = view.findViewById(R.id.ViTri);
         vitri.setOnClickListener(new View.OnClickListener() {
@@ -472,13 +462,67 @@ public class DoManHienTaiFragment extends Fragment {
             }
         });
 
-
-        Button xemdoman = view.findViewById(R.id.XemDoMan);
-        xemdoman.setOnClickListener(new View.OnClickListener() {
+        Button thoigian = view.findViewById(R.id.DuBao);
+        thoigian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (_vitri == "" || _cuasong == "" || _tram == "") {
-                    Toast.makeText(requireContext(), "Hãy chọn đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+
+                if(_tram == "") {
+                    Toast.makeText(requireContext(), "Hãy chọn trạm", Toast.LENGTH_SHORT)
+                            .show();
+                    return;
+                }
+                PopupMenu popupMenu = new PopupMenu(requireContext(), v);
+                popupMenu.getMenuInflater().inflate(R.menu.thoi_gian, popupMenu.getMenu());
+
+                // Xử lý sự kiện khi một item trong PopupMenu được chọn
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        // Xử lý sự kiện khi item được chọn
+
+                        switch (item.getTitle().toString()) {
+                            case "1 tuần tới":
+                                // Code xử lý khi menu item AnGiang được chọn
+                                // Ví dụ:
+                                _thoigian = item.getTitle().toString();
+                                thoigian.setText(_thoigian);
+                                return true;
+                            case "2 tuần tới":
+                                // Code xử lý khi menu item BacLieu được chọn
+                                _thoigian = item.getTitle().toString();
+                                thoigian.setText(_thoigian);
+                                return true;
+                            case "1 tháng tới":
+                                // Code xử lý khi menu item BenTre được chọn
+                                _thoigian = item.getTitle().toString();
+                                thoigian.setText(_thoigian);
+                                return true;
+                            case "3 tháng tới":
+                                // Code xử lý khi menu item CaMau được chọn
+                                _thoigian = item.getTitle().toString();
+                                thoigian.setText(_thoigian);
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                });
+
+                popupMenu.show();
+            }
+        });
+
+        Button xemdubao = view.findViewById(R.id.XemDuBao);
+        xemdubao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (_vitri == "" || _cuasong == "" || _tram == "" || _thoigian == "") {
+                    Toast.makeText(
+                            requireContext(),
+                            "Hãy chọn đầy đủ thông tin",
+                            Toast.LENGTH_SHORT
+                    ).show();
                     return;
                 }
 
@@ -496,319 +540,138 @@ public class DoManHienTaiFragment extends Fragment {
 
                 TextView mandoman = view.findViewById(R.id.mandoman);
 
-                String[] curentDate = dateCurrent();
+                String[] curentDate = date2week();
+                if (_thoigian.equals("1 tuần tới")) {
+                    curentDate = date1week();
+                }
+
+                if (_thoigian.equals("2 tuần tới")) {
+                    curentDate = date2week();
+                }
+
+                if (_thoigian.equals("1 tháng tới")) {
+                    curentDate = date1month();
+                }
+
+                if (_thoigian.equals("3 tháng tới")) {
+                    curentDate = date3month();
+                }
+
 
                 String p = getPath(_tram);
-                getDoMan(p, curentDate[0], curentDate[1], curentDate[2], new OnGetDataListener() {
-                    @Override
-                    public void onSuccess(String salinity) {
-                        Toast.makeText(requireContext(), salinity, Toast.LENGTH_SHORT).show();
-                        float homnay = Float.parseFloat(salinity);
-                        if (homnay <= 0) {
-                            mandoman.setText("0");
-                            return;
-                        }
-                        if (salinity.length() >= 4) {
-                            // Lấy 4 ký tự đầu tiên từ chuỗi
-                            salinity = salinity.substring(0, 4);}
-                        mandoman.setText(salinity);
-
-                        String[] priDate = dateYesterday();
-                        getDoMan(p, priDate[0], priDate[1], priDate[2], new OnGetDataListener() {
+                getDoMan(
+                        p,
+                        curentDate[0],
+                        curentDate[1],
+                        curentDate[2],
+                        new DoManHienTaiFragment.OnGetDataListener() {
                             @Override
                             public void onSuccess(String salinity) {
-                                float homqua = Float.parseFloat(salinity);
-                                Drawable drawable;
-                                if (homnay <= homqua) {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_down_24);
+                                Toast.makeText(requireContext(), salinity, Toast.LENGTH_SHORT)
+                                        .show();
+                                float homnay = Float.parseFloat(salinity);
+                                if (homnay <= 0) {
+                                    mandoman.setText("0");
+                                    return;
                                 }
-                                else {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_up_24);
+                                if (salinity.length() >= 4) {
+                                    // Lấy 4 ký tự đầu tiên từ chuỗi
+                                    salinity = salinity.substring(0, 4);
                                 }
-                                mandoman.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
+                                mandoman.setText(salinity);
+
+                                String[] priDate = dateCurrent();
+                                getDoMan(
+                                        p,
+                                        priDate[0],
+                                        priDate[1],
+                                        priDate[2],
+                                        new DoManHienTaiFragment.OnGetDataListener() {
+                                            @Override
+                                            public void onSuccess(String salinity) {
+                                                float homqua = Float.parseFloat(salinity);
+                                                Drawable drawable;
+                                                if (homnay <= homqua) {
+                                                    drawable =
+                                                            getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_down_24);
+                                                } else {
+                                                    drawable =
+                                                            getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_up_24);
+                                                }
+                                                mandoman.setCompoundDrawablesWithIntrinsicBounds(
+                                                        null,
+                                                        null,
+                                                        drawable,
+                                                        null
+                                                );
+                                            }
+
+                                            @Override
+                                            public void onFailed(String errorMessage) {
+
+                                            }
+                                        }
+                                );
                             }
 
                             @Override
                             public void onFailed(String errorMessage) {
 
                             }
-                        });
-                    }
-
-                    @Override
-                    public void onFailed(String errorMessage) {
-
-                    }
-                });
-
-                TextView ke1tram = view.findViewById(R.id.ke1tram);
-                ke1tram.setText("Sơn Đốc");
-
-                TextView ke1cuasong = view.findViewById(R.id.ke1cuasong);
-                ke1cuasong.setText("(Hàm Luông)");
-
-                TextView ke1cua = view.findViewById(R.id.ke1cua);
-                ke1cua.setText(getCua("Hàm Luông"));
-
-                TextView ke1doman = view.findViewById(R.id.ke1doman);
-
-                String p1 = "/bentre/hamluong/sondoc";
-                getDoMan(p1, curentDate[0], curentDate[1], curentDate[2], new OnGetDataListener() {
-                    @Override
-                    public void onSuccess(String salinity) {
-                        float homnay = Float.parseFloat(salinity);
-                        if (homnay <= 0) {
-                            ke1doman.setText("0");
-                            return;
                         }
-                        if (salinity.length() >= 4) {
-                            // Lấy 4 ký tự đầu tiên từ chuỗi
-                            salinity = salinity.substring(0, 4);}
-                        ke1doman.setText(salinity);
-
-                        String[] priDate = dateYesterday();
-                        getDoMan(p1, priDate[0], priDate[1], priDate[2], new OnGetDataListener() {
-                            @Override
-                            public void onSuccess(String salinity) {
-                                float homqua = Float.parseFloat(salinity);
-                                Drawable drawable;
-                                if (homnay <= homqua) {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_down_24);
-                                }
-                                else {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_up_24);
-                                }
-                                ke1doman.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
-                            }
-
-                            @Override
-                            public void onFailed(String errorMessage) {
-
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onFailed(String errorMessage) {
-
-                    }
-                });
-
-                TextView ke2tram = view.findViewById(R.id.ke2tram);
-                ke2tram.setText("Hương Mỹ");
-
-                TextView ke2cuasong = view.findViewById(R.id.ke2cuasong);
-                ke2cuasong.setText("(Cổ Chiên)");
-
-                TextView ke2cua = view.findViewById(R.id.ke2cua);
-                ke2cua.setText(getCua("Cổ Chiên"));
-
-                TextView ke2doman = view.findViewById(R.id.ke2doman);
-
-                String p2 = "/bentre/cochien/huongmy";
-                getDoMan(p2, curentDate[0], curentDate[1], curentDate[2], new OnGetDataListener() {
-                    @Override
-                    public void onSuccess(String salinity) {
-                        float homnay = Float.parseFloat(salinity);
-                        if (homnay <= 0) {
-                            ke2doman.setText("0");
-                            return;
-                        }
-                        if (salinity.length() >= 4) {
-                            // Lấy 4 ký tự đầu tiên từ chuỗi
-                            salinity = salinity.substring(0, 4);}
-                        ke2doman.setText(salinity);
-
-                        String[] priDate = dateYesterday();
-                        getDoMan(p2, priDate[0], priDate[1], priDate[2], new OnGetDataListener() {
-                            @Override
-                            public void onSuccess(String salinity) {
-                                float homqua = Float.parseFloat(salinity);
-                                Drawable drawable;
-                                if (homnay <= homqua) {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_down_24);
-                                }
-                                else {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_up_24);
-                                }
-                                ke2doman.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
-                            }
-
-                            @Override
-                            public void onFailed(String errorMessage) {
-
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onFailed(String errorMessage) {
-
-                    }
-                });
-
-                TextView ke3tram = view.findViewById(R.id.ke3tram);
-                ke3tram.setText("Giao Long");
-
-                TextView ke3cuasong = view.findViewById(R.id.ke3cuasong);
-                ke3cuasong.setText("(Cửa Đại)");
-
-                TextView ke3cua = view.findViewById(R.id.ke3cua);
-                ke3cua.setText(getCua("Cửa Đại"));
-
-                TextView ke3doman = view.findViewById(R.id.ke3doman);
-
-                String p3 = "/bentre/cuadai/giaolong";
-                getDoMan(p3, curentDate[0], curentDate[1], curentDate[2], new OnGetDataListener() {
-                    @Override
-                    public void onSuccess(String salinity) {
-                        float homnay = Float.parseFloat(salinity);
-                        if (homnay <= 0) {
-                            ke3doman.setText("0");
-                            return;
-                        }
-                        if (salinity.length() >= 4) {
-                            // Lấy 4 ký tự đầu tiên từ chuỗi
-                            salinity = salinity.substring(0, 4);}
-                        ke3doman.setText(salinity);
-
-                        String[] priDate = dateYesterday();
-                        getDoMan(p3, priDate[0], priDate[1], priDate[2], new OnGetDataListener() {
-                            @Override
-                            public void onSuccess(String salinity) {
-                                float homqua = Float.parseFloat(salinity);
-                                Drawable drawable;
-                                if (homnay <= homqua) {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_down_24);
-                                }
-                                else {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_up_24);
-                                }
-                                ke3doman.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
-                            }
-
-                            @Override
-                            public void onFailed(String errorMessage) {
-
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onFailed(String errorMessage) {
-
-                    }
-                });
-
-                TextView ke4tram = view.findViewById(R.id.ke4tram);
-                ke4tram.setText("Giao Hòa");
-
-                TextView ke4cuasong = view.findViewById(R.id.ke4cuasong);
-                ke4cuasong.setText("(An Hóa)");
-
-                TextView ke4cua = view.findViewById(R.id.ke4cua);
-                ke4cua.setText(getCua("An Hóa"));
-
-                TextView ke4doman = view.findViewById(R.id.ke4doman);
-
-                String p4 = "/bentre/anhoa/giaohoa";
-                getDoMan(p4, curentDate[0], curentDate[1], curentDate[2], new OnGetDataListener() {
-                    @Override
-                    public void onSuccess(String salinity) {
-                        float homnay = Float.parseFloat(salinity);
-                        if (homnay <= 0) {
-                            ke4doman.setText("0");
-                            return;
-                        }
-                        if (salinity.length() >= 4) {
-                            // Lấy 4 ký tự đầu tiên từ chuỗi
-                            salinity = salinity.substring(0, 4);}
-                        ke4doman.setText(salinity);
-
-                        String[] priDate = dateYesterday();
-                        getDoMan(p4, priDate[0], priDate[1], priDate[2], new OnGetDataListener() {
-                            @Override
-                            public void onSuccess(String salinity) {
-                                float homqua = Float.parseFloat(salinity);
-                                Drawable drawable;
-                                if (homnay <= homqua) {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_down_24);
-                                }
-                                else {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_up_24);
-                                }
-                                ke4doman.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
-                            }
-
-                            @Override
-                            public void onFailed(String errorMessage) {
-
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onFailed(String errorMessage) {
-
-                    }
-                });
-
-                TextView ke5tram = view.findViewById(R.id.ke5tram);
-                ke5tram.setText("Long Hòa");
-
-                TextView ke5cuasong = view.findViewById(R.id.ke5cuasong);
-                ke5cuasong.setText("(Ba Lai)");
-
-                TextView ke5cua = view.findViewById(R.id.ke5cua);
-                ke5cua.setText(getCua("Ba Lai"));
-
-                TextView ke5doman = view.findViewById(R.id.ke5doman);
-
-                String p5 = "/bentre/balai/longhoa";
-                getDoMan(p5, curentDate[0], curentDate[1], curentDate[2], new OnGetDataListener() {
-                    @Override
-                    public void onSuccess(String salinity) {
-                        float homnay = Float.parseFloat(salinity);
-                        if (homnay <= 0) {
-                            ke5doman.setText("0");
-                            return;
-                        }
-                        if (salinity.length() >= 4) {
-                            // Lấy 4 ký tự đầu tiên từ chuỗi
-                            salinity = salinity.substring(0, 4);}
-                        ke5doman.setText(salinity);
-
-                        String[] priDate = dateYesterday();
-                        getDoMan(p5, priDate[0], priDate[1], priDate[2], new OnGetDataListener() {
-                            @Override
-                            public void onSuccess(String salinity) {
-                                float homqua = Float.parseFloat(salinity);
-                                Drawable drawable;
-                                if (homnay <= homqua) {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_down_24);
-                                }
-                                else {
-                                    drawable = getResources().getDrawable(R.drawable.baseline_keyboard_double_arrow_up_24);
-                                }
-                                ke5doman.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
-                            }
-
-                            @Override
-                            public void onFailed(String errorMessage) {
-
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onFailed(String errorMessage) {
-
-                    }
-                });
-
+                );
             }
         });
 
+        TextView bt = view.findViewById(R.id.xemthem);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new GiaiPhapFragment(), false);
+            }
+        });
+
+        TextView ten1 = view.findViewById(R.id.ten1);
+        Button gp1 = view.findViewById(R.id.gp1);
+        gp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = getActivity().getSharedPreferences("giai_phap", Context.MODE_PRIVATE).edit();
+                editor.putString("ten", String.valueOf(ten1.getText()));
+                editor.putString("gp", "1");
+                editor.apply();
+
+                loadFragment(new GiaiPhapChiTietFragment(), false);
+            }
+        });
+
+        TextView ten4 = view.findViewById(R.id.ten4);
+        Button gp4 = view.findViewById(R.id.gp4);
+        gp4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = getActivity().getSharedPreferences("giai_phap", Context.MODE_PRIVATE).edit();
+                editor.putString("ten", String.valueOf(ten4.getText()));
+                editor.putString("gp", "4");
+                editor.apply();
+
+                loadFragment(new GiaiPhapChiTietFragment(), false);
+            }
+        });
+
+        TextView ten10 = view.findViewById(R.id.ten10);
+        Button gp10 = view.findViewById(R.id.gp10);
+        gp10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = getActivity().getSharedPreferences("giai_phap", Context.MODE_PRIVATE).edit();
+                editor.putString("ten", String.valueOf(ten10.getText()));
+                editor.putString("gp", "10");
+                editor.apply();
+
+                loadFragment(new GiaiPhapChiTietFragment(), false);
+            }
+        });
         return view;
     }
 
@@ -874,7 +737,7 @@ public class DoManHienTaiFragment extends Fragment {
         fragmentTransaction.commit();
     }
 
-    private void getDoMan(String pathdb, String date, String month, String year, final OnGetDataListener listener) {
+    private void getDoMan(String pathdb, String date, String month, String year, final DoManHienTaiFragment.OnGetDataListener listener) {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(pathdb);
         Query query = databaseReference.orderByChild("Year").equalTo(year);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -931,6 +794,70 @@ public class DoManHienTaiFragment extends Fragment {
 
         // Trừ đi 1 ngày để lấy ngày hôm qua
         calendar.add(Calendar.DAY_OF_MONTH, -1);
+
+        // Lấy ngày, tháng, năm của ngày hôm qua
+        String yesterdayDay = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        String yesterdayMonth = String.valueOf(calendar.get(Calendar.MONTH) + 1); // Tháng được đếm từ 0, cộng thêm 1
+        String yesterdayYear = String.valueOf(calendar.get(Calendar.YEAR));
+
+        // Trả về một mảng chứa ngày, tháng, năm của ngày hôm qua
+        return new String[]{yesterdayDay, yesterdayMonth, yesterdayYear};
+    }
+
+    public String[] date1week() {
+        // Lấy ngày hiện tại
+        Calendar calendar = Calendar.getInstance();
+
+        // Trừ đi 1 ngày để lấy ngày hôm qua
+        calendar.add(Calendar.DAY_OF_MONTH, 7);
+
+        // Lấy ngày, tháng, năm của ngày hôm qua
+        String yesterdayDay = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        String yesterdayMonth = String.valueOf(calendar.get(Calendar.MONTH) + 1); // Tháng được đếm từ 0, cộng thêm 1
+        String yesterdayYear = String.valueOf(calendar.get(Calendar.YEAR));
+
+        // Trả về một mảng chứa ngày, tháng, năm của ngày hôm qua
+        return new String[]{yesterdayDay, yesterdayMonth, yesterdayYear};
+    }
+
+    public String[] date2week() {
+        // Lấy ngày hiện tại
+        Calendar calendar = Calendar.getInstance();
+
+        // Trừ đi 1 ngày để lấy ngày hôm qua
+        calendar.add(Calendar.DAY_OF_MONTH, 14);
+
+        // Lấy ngày, tháng, năm của ngày hôm qua
+        String yesterdayDay = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        String yesterdayMonth = String.valueOf(calendar.get(Calendar.MONTH) + 1); // Tháng được đếm từ 0, cộng thêm 1
+        String yesterdayYear = String.valueOf(calendar.get(Calendar.YEAR));
+
+        // Trả về một mảng chứa ngày, tháng, năm của ngày hôm qua
+        return new String[]{yesterdayDay, yesterdayMonth, yesterdayYear};
+    }
+
+    public String[] date1month() {
+        // Lấy ngày hiện tại
+        Calendar calendar = Calendar.getInstance();
+
+        // Trừ đi 1 ngày để lấy ngày hôm qua
+        calendar.add(Calendar.DAY_OF_MONTH, 30);
+
+        // Lấy ngày, tháng, năm của ngày hôm qua
+        String yesterdayDay = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        String yesterdayMonth = String.valueOf(calendar.get(Calendar.MONTH) + 1); // Tháng được đếm từ 0, cộng thêm 1
+        String yesterdayYear = String.valueOf(calendar.get(Calendar.YEAR));
+
+        // Trả về một mảng chứa ngày, tháng, năm của ngày hôm qua
+        return new String[]{yesterdayDay, yesterdayMonth, yesterdayYear};
+    }
+
+    public String[] date3month() {
+        // Lấy ngày hiện tại
+        Calendar calendar = Calendar.getInstance();
+
+        // Trừ đi 1 ngày để lấy ngày hôm qua
+        calendar.add(Calendar.DAY_OF_MONTH, 90);
 
         // Lấy ngày, tháng, năm của ngày hôm qua
         String yesterdayDay = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));

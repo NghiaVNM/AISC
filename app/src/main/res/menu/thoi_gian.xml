@@ -2,27 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/BenTre_BaLai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="Ba Lai" />
-    <item
-        android:id="@+id/BenTre_CoChien"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="Cổ Chiên" />
-    <item
-        android:id="@+id/BenTre_Dai"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="Cửa Đại" />
-    <item
-        android:id="@+id/BenTre_HamLuong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="Hàm Luông" />
+        android:title="1 tuần tới" />
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="An Hóa" />
+        android:title="2 tuần tới" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="1 tháng tới" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="3 tháng tới" />
 </menu>
