@@ -256,7 +256,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/lua"
+                            android:src="@drawable/luaaa"
                             android:paddingHorizontal="10dp" />
 
                         <TextView

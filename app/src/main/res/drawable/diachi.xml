@@ -6,7 +6,7 @@
 
     <!-- Thiết lập màu viền và độ rộng -->
     <stroke
-        android:width="5dp"
+        android:width="2dp"
         android:color="@color/colorPrimary" />
 
     <!-- Các thuộc tính khác nếu cần -->

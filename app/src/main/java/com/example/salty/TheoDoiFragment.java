@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 /**
@@ -77,14 +78,6 @@ public class TheoDoiFragment extends Fragment {
         // Lấy userId từ SharedPreferences
         String userId = sharedPreferences.getString("user_id", null);
 
-        if (userId != null) {
-            // Nếu userId tồn tại, bạn có thể sử dụng nó ở đây
-            // Ví dụ:
-            Toast.makeText(requireContext(), "User ID: " + userId, Toast.LENGTH_SHORT).show();
-        } else {
-            // Nếu không có userId trong SharedPreferences
-            Toast.makeText(requireContext(), "User ID không tồn tại", Toast.LENGTH_SHORT).show();
-        }
 
     }
 
@@ -93,11 +86,28 @@ public class TheoDoiFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_theo_doi, container, false);
-        Button buttonDoManHienTai = view.findViewById(R.id.DanhSachCongViec);
-        buttonDoManHienTai.setOnClickListener(new View.OnClickListener() {
+
+        SharedPreferences prefs = getActivity().getSharedPreferences("lua", Context.MODE_PRIVATE);
+        String add = prefs.getString("add", "default_value");
+
+        if (add.equals("yes")) {
+            LinearLayout l = view.findViewById(R.id.luanew);
+            l.setVisibility(View.VISIBLE);
+        }
+
+        Button chinhsua = view.findViewById(R.id.chinhsua);
+        chinhsua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new DanhSachCongViecFragment(), false);
+                loadFragment(new ChinhSuaFragment(), false);
+            }
+        });
+
+        Button viec = view.findViewById(R.id.congviec);
+        viec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new CongViecFragment(), false);
             }
         });
 

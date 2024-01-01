@@ -1,21 +1,535 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TheoDoiFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Theo dõi"
-        android:layout_gravity="center"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/DanhSachCongViec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DanhSachCongViec" />
+        <LinearLayout
+            android:id="@+id/hienthi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="50dp"
+                        app:cardBackgroundColor="@color/colorPrimary">
+
+                        <ImageButton
+                            android:id="@+id/profileButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="15dp"
+                            android:src="@drawable/baseline_person_24"
+                            android:scaleType="fitXY"/>
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="left"
+                    android:layout_gravity="center"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nông dân: Nguyễn Văn A"
+                        android:textSize="18dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Địa chỉ: Bến Tre"
+                        android:textSize="18dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Canh tác: Tôm Lúa"
+                        android:textSize="18dp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/chinhsua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chỉnh sửa"
+                    android:background="@drawable/gia2"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:id="@+id/tom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/man"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/ten1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:text="Tôm"
+                            android:textStyle="bold"
+                            android:background="@drawable/gia2"
+                            android:padding="0dp"
+                            android:textSize="15dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"/>
+
+                        <ImageView
+                            android:id="@+id/hinh1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/tom"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+
+
+
+                    <TextView
+                        android:id="@+id/giong1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giống: Tôm sú nước lợ"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:id="@+id/ngayxuong1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày xuống giống: 21/8/2023"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:id="@+id/matdo1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mật độ: 35 con/m2"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:id="@+id/ngaythu1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày thu hoạch (dự kiến): 3/12/2023"
+                        android:paddingLeft="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingTop="20dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/nhietdo"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nhiệt độ"/>
+                            <TextView
+                                android:id="@+id/nhietdo1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="24C - 28C"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/domann"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Độ mặn"/>
+                            <TextView
+                                android:id="@+id/doman1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5 - 15 g/l"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingTop="10dp">
+
+                        <Button
+                            android:id="@+id/kythuat1"
+                            android:layout_width="159dp"
+                            android:layout_height="40dp"
+                            android:text="Kỹ thuật canh tác"
+                            android:background="@drawable/gia2"/>
+                        <TextView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"/>
+                        <Button
+                            android:id="@+id/saubenh1"
+                            android:layout_width="159dp"
+                            android:layout_height="40dp"
+                            android:text="Sâu bệnh và hại"
+                            android:background="@drawable/gia2"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"/>
+
+                <LinearLayout
+                    android:id="@+id/lua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/luaaa"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:theme="@style/Theme.Salty"
+                            android:id="@+id/ten2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:text="Lúa"
+                            android:textStyle="bold"
+                            android:background="@drawable/gia2"
+                            android:padding="0dp"
+                            android:textSize="15dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"/>
+
+                        <ImageView
+                            android:id="@+id/hinh2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/luaa"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+
+
+
+                    <TextView
+                        android:id="@+id/giong2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giống: OM6976"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:id="@+id/ngayxuong2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày xuống giống: 15/7/2023"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:id="@+id/matdo2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mật độ: 120 kg/ha"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:id="@+id/ngaythu2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày thu hoạch (dự kiến): 11/12/2023"
+                        android:paddingLeft="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingTop="20dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/nhietdo"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nhiệt độ"/>
+                            <TextView
+                                android:id="@+id/nhietdo2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="26C - 35C"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/domann"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Độ mặn"/>
+                            <TextView
+                                android:id="@+id/doman2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3 - 7 g/l"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingTop="10dp">
+
+                        <Button
+                            android:id="@+id/kythuat2"
+                            android:layout_width="159dp"
+                            android:layout_height="40dp"
+                            android:text="Kỹ thuật canh tác"
+                            android:background="@drawable/gia2"/>
+                        <TextView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"/>
+                        <Button
+                            android:id="@+id/saubenh2"
+                            android:layout_width="159dp"
+                            android:layout_height="40dp"
+                            android:text="Sâu bệnh và hại"
+                            android:background="@drawable/gia2"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/luanew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/luaaa"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:theme="@style/Theme.Salty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:text="Lúa"
+                            android:textStyle="bold"
+                            android:background="@drawable/gia2"
+                            android:padding="0dp"
+                            android:textSize="15dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/luaa"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giống: ST25"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày xuống giống: 1/1/2024"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mật độ: 200 kg/ha"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày thu hoạch (dự kiến): 15/4/2024"
+                        android:paddingLeft="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingTop="20dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/nhietdo"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nhiệt độ"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="26C - 35C"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/domann"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Độ mặn"/>
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3 - 7 g/l"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingTop="10dp">
+
+                        <Button
+                            android:layout_width="159dp"
+                            android:layout_height="40dp"
+                            android:text="Kỹ thuật canh tác"
+                            android:background="@drawable/gia2"/>
+                        <TextView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"/>
+                        <Button
+                            android:layout_width="159dp"
+                            android:layout_height="40dp"
+                            android:text="Sâu bệnh và hại"
+                            android:background="@drawable/gia2"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/congviec"
+                    android:paddingTop="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gia2"
+                    android:text="Danh sách công việc"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
