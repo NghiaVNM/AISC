@@ -168,7 +168,7 @@ public class GiaiPhapChiTietFragment extends Fragment {
                                         String url = _link; // Thay đổi URL của trang web bạn muốn mở
 
                                         // Tạo Intent để mở trình duyệt web
-                                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://" + _link));
+                                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(_link));
                                         startActivity(intent);;
                                     }
                                 });

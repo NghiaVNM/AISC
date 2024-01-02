@@ -1,5 +1,7 @@
 package com.example.salty;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
@@ -251,6 +253,11 @@ public class CongViecFragment extends Fragment {
                 }
             }
         });
+
+        SharedPreferences.Editor editor = getActivity().getSharedPreferences("lua", Context.MODE_PRIVATE).edit();
+        editor.putString("add", "no");
+        editor.apply();
+
         // Inflate the layout for this fragment
         return view;
     }

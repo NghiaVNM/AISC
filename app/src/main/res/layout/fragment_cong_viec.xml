@@ -42,7 +42,7 @@
                     android:text="0 %"
                     android:background="@drawable/gia2"
                     android:textStyle="bold"
-                    android:textSize="25dp"
+                    android:textSize="15dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="0dp"/>
             </LinearLayout>
@@ -50,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:background="@color/colorPrimary"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="4dp"/>
@@ -61,17 +62,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="20dp">
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center">
 
                     <CheckBox
                         android:paddingHorizontal="20dp"
                         android:id="@+id/checkBox1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Cho tôm ăn\nThức ăn: 12kg\n6h00 - 6h30"
-                        android:drawableEnd="@drawable/tom"
+                        android:layout_gravity="center"
                         android:textSize="15dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cho tôm ăn"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thức ăn: 12kg"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6h00 - 6h30"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tom"
+                        android:paddingLeft="120dp"
+                        android:layout_gravity="right"/>
+
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -86,17 +115,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="20dp">
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center">
 
                     <CheckBox
                         android:paddingHorizontal="20dp"
                         android:id="@+id/checkBox2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Siphon ao\nThời gian: 10 phút\n7h00 - 7h30"
-                        android:drawableEnd="@drawable/tom"
-                        android:textSize="15dp"/>
+                        android:layout_gravity="center"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Siphon ao"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thời gian: 10 phút"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7h00 - 7h30"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tom"
+                        android:paddingLeft="100dp"
+                        android:layout_gravity="right"/>
+
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -111,115 +168,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="20dp">
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center">
 
                     <CheckBox
                         android:paddingHorizontal="20dp"
                         android:id="@+id/checkBox3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:textSize="15dp"/>
+                        android:layout_gravity="center"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kiểm tra độ ẩm ruông lúa"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="nhỏ hơn 13%"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7h30"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/luaa"
+                        android:paddingLeft="50dp"
+                        android:layout_gravity="right"/>
 
                     
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <TextView
-            android:layout_width="match_parent"
-            android:layout_height="4dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gia">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="20dp">
-
-                    <CheckBox
-                        android:paddingHorizontal="20dp"
-                        android:id="@+id/checkBox4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Bón phân bón đồng\n7kg Ure + 3kg KCL\n7h30 - 9h"
-                        android:drawableEnd="@drawable/luaa"
-                        android:textSize="15dp"/>
-                </LinearLayout>
-
-            </LinearLayout><TextView
-            android:layout_width="match_parent"
-            android:layout_height="4dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gia">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="20dp">
-
-                    <CheckBox
-                        android:paddingHorizontal="20dp"
-                        android:id="@+id/checkBox5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Cho tôm ăn\nThức ăn: 9kg\nThời gian: 12h - 12h30"
-                        android:drawableEnd="@drawable/tom"
-                        android:textSize="15dp"/>
-                </LinearLayout>
-
-            </LinearLayout><TextView
-            android:layout_width="match_parent"
-            android:layout_height="4dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gia">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="20dp">
-
-                    <CheckBox
-                        android:paddingHorizontal="20dp"
-                        android:id="@+id/checkBox6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Kiểm tra sâu bệnh\n\n14h30 - 16h00"
-                        android:drawableEnd="@drawable/luaa"
-                        android:textSize="15dp"/>
-                </LinearLayout>
-
-            </LinearLayout><TextView
-            android:layout_width="match_parent"
-            android:layout_height="4dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gia">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="20dp">
-
-                    <CheckBox
-                        android:paddingHorizontal="20dp"
-                        android:id="@+id/checkBox7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Khử trùng ao nuôi\nHợp chất: BKC\n16h00 - 18h00"
-                        android:drawableEnd="@drawable/tom"
-                        android:textSize="15dp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -234,17 +221,257 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="20dp">
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center">
 
                     <CheckBox
+                        android:paddingHorizontal="20dp"
+                        android:id="@+id/checkBox4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bón phân đón đồng"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7kg Ure + 3kg KCL"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7h30 - 9h00"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/luaa"
+                        android:paddingLeft="90dp"
+                        android:layout_gravity="right"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="4dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gia">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center">
+
+                    <CheckBox
+                        android:paddingHorizontal="20dp"
+                        android:id="@+id/checkBox5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cho tôm ăn"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thức ăn: 9kg"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12h00 - 12h30"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tom"
+                        android:paddingLeft="120dp"
+                        android:layout_gravity="right"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="4dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gia">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center">
+
+                    <CheckBox
+                        android:paddingHorizontal="20dp"
+                        android:id="@+id/checkBox6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kiểm tra sâu bệnh"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="14h30 - 16h00"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/luaa"
+                        android:paddingLeft="100dp"
+                        android:layout_gravity="right"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="4dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gia">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center">
+
+                    <CheckBox
+                        android:paddingHorizontal="20dp"
+                        android:id="@+id/checkBox7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Khử trùng ao nuôi"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hợp chất: BKC"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="16h00 - 17h00"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tom"
+                        android:paddingLeft="100dp"
+                        android:layout_gravity="right"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="4dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gia">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center">
+
+                    <CheckBox
+                        android:paddingHorizontal="20dp"
                         android:id="@+id/checkBox8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableEnd="@drawable/tom"
-                        android:paddingHorizontal="20dp"
-                        android:text="Cho tôm ăn\nThức ăn: 12kg\nThời gian: 17h30 - 18h00"
+                        android:layout_gravity="center"
                         android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cho tôm ăn"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thức ăn: 12kg"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="17h30 - 18h00"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tom"
+                        android:paddingLeft="120dp"
+                        android:layout_gravity="right"/>
+
+
                 </LinearLayout>
 
             </LinearLayout>

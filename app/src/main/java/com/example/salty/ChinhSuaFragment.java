@@ -103,10 +103,10 @@ public class ChinhSuaFragment extends Fragment {
             public void onClick(View v) {
                 LinearLayout xem = view.findViewById(R.id.them);
                 xem.setVisibility(View.VISIBLE);
-                LinearLayout xem2 = view.findViewById(R.id.them);
-                xem2.setVisibility(View.GONE);
             }
         });
+
+
 
         Button themgiong = view.findViewById(R.id.themgiong);
         themgiong.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +114,8 @@ public class ChinhSuaFragment extends Fragment {
             public void onClick(View v) {
                 LinearLayout after = view.findViewById(R.id.after);
                 after.setVisibility(View.VISIBLE);
+                LinearLayout xem2 = view.findViewById(R.id.them);
+                xem2.setVisibility(View.GONE);
             }
         });
 

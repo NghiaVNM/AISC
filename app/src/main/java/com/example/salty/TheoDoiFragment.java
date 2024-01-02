@@ -78,7 +78,6 @@ public class TheoDoiFragment extends Fragment {
         // Lấy userId từ SharedPreferences
         String userId = sharedPreferences.getString("user_id", null);
 
-
     }
 
     @Override
