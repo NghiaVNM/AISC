@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KyThuatFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gia2"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="3dp">
+                        <TextView
+                            android:id="@+id/tengiaiphap"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Kỹ thuật canh tác"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:textSize="30dp"/>
+                </LinearLayout>
+
+            <ImageView
+                android:id="@+id/hinh"
+                android:layout_width="390dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:paddingVertical="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/kythua" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="Canh tác lúa là một quá trình quan trọng trong sản xuất nông nghiệp, và có một số kỹ thuật quan trọng để đảm bảo mùa màng cao và chất lượng sản phẩm. Dưới đây là một số kỹ thuật canh tác lúa cơ bản:"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Chọn giống lúa phù hợp:"
+                android:textStyle="bold"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Chọn giống lúa có khả năng chịu sâu bệnh, chịu hạn và có năng suất cao. Đối với từng vùng, lựa chọn giống phù hợp với điều kiện khí hậu và đất địa."/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Chuẩn bị đất: Loại bỏ cỏ dại và các vật liệu gây cản trở sự phát triển của cây lúa.Sử dụng phân bón hữu cơ hoặc hóa học để cung cấp dưỡng chất cho đất. Làm cỏ để cải thiện cấu trúc đất và tăng sự thoát nước." />
+
+            <TextView
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gieo hạt lúa:"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:layout_height="wrap_content"
+                android:text="Sử dụng hạt lúa có chất lượng cao để đảm bảo mầm nảy mạnh.Sắp xếp đều các hạt lúa để đảm bảo sự phát triển đồng đều của cây."/>
+            <TextView
+                android:paddingTop="10dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quản lý nước:"
+                android:textSize="16dp"
+                />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Đảm bảo cung cấp nước đủ nhưng không quá mức để tránh tình trạng ngập úng. Sử dụng hệ thống tưới nhỏ giọt hoặc tưới theo dòng để tối ưu hóa sử dụng nước."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phòng trừ sâu bệnh: "
+                android:textSize="16dp"
+                android:paddingTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Sử dụng phương pháp kiểm soát hóa học hoặc sinh học để ngăn chặn sự phát triển của sâu bệnh và dương vật. Thực hiện các biện pháp phòng trừ sâu bệnh như lựa chọn giống chịu sâu bệnh, luân phiên cây trồng, và sử dụng thuốc phun an toàn."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quản lý dinh dưỡng:"
+                android:textSize="16dp"
+                android:paddingTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kiểm tra và điều chỉnh lượng phân bón theo nhu cầu của cây lúa trong suốt quá trình phát triển. Sử dụng phân bón hữu cơ để cải thiện sức khỏe của đất và giảm tác động tiêu cực đối với môi trường."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Thu hoạch và bảo quản: "
+                android:paddingTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Chọn thời điểm thu hoạch phù hợp để đảm bảo chất lượng và năng suất. Sử dụng máy móc hiện đại để gia tăng hiệu suất thu hoạch. Lưu trữ lúa ở điều kiện môi trường thích hợp để tránh mất mát và hư hại."/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

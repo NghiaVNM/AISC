@@ -144,7 +144,7 @@
                         android:id="@+id/ngayxuong1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ngày xuống giống: 21/8/2023"
+                        android:text="Ngày xuống giống: 21/12/2023"
                         android:paddingLeft="10dp"/>
                     <TextView
                         android:id="@+id/matdo1"
@@ -156,7 +156,7 @@
                         android:id="@+id/ngaythu1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ngày thu hoạch (dự kiến): 3/12/2023"
+                        android:text="Ngày thu hoạch (dự kiến): 20/3/2023"
                         android:paddingLeft="10dp"/>
 
                     <LinearLayout
@@ -289,7 +289,7 @@
                         android:id="@+id/ngayxuong2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ngày xuống giống: 15/7/2023"
+                        android:text="Ngày xuống giống: 15/11/2023"
                         android:paddingLeft="10dp"/>
                     <TextView
                         android:id="@+id/matdo2"
@@ -301,7 +301,7 @@
                         android:id="@+id/ngaythu2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ngày thu hoạch (dự kiến): 11/12/2023"
+                        android:text="Ngày thu hoạch (dự kiến): 24/2/2023"
                         android:paddingLeft="10dp"/>
 
                     <LinearLayout
@@ -499,6 +499,7 @@
                         android:paddingTop="10dp">
 
                         <Button
+                            android:id="@+id/kt"
                             android:layout_width="159dp"
                             android:layout_height="40dp"
                             android:text="Kỹ thuật canh tác"
@@ -507,6 +508,7 @@
                             android:layout_width="20dp"
                             android:layout_height="wrap_content"/>
                         <Button
+                            android:id="@+id/sb"
                             android:layout_width="159dp"
                             android:layout_height="40dp"
                             android:text="Sâu bệnh và hại"

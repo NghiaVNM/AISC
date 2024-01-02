@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SauBenhHaiFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/gia2"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="3dp">
+                <TextView
+                    android:id="@+id/tengiaiphap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Sâu bệnh hại"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="30dp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/hinh"
+                android:layout_width="390dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:paddingVertical="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/saubenh" />
+
+             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Bệnh đạo ôn (Bệnh đạo ôn lúa):"
+                android:textStyle="bold"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Gây nên các vết ố vàng trên lá, làm suy giảm khả năng quang hợp của cây."/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Đối phó: Sử dụng loại giống có sức đề kháng cao, kiểm soát sâu bệnh bằng cách sử dụng thuốc phun hóa học hoặc các biện pháp kiểm soát sinh học. " />
+
+            <TextView
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bệnh lá trắng (Bệnh nấm lá trắng):"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:layout_height="wrap_content"
+                android:text="Gây ra các đốm trắng hoặc nâu trên lá và cuống lá, làm mất lá và ảnh hưởng đến khả năng quang hợp của cây."/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:layout_height="wrap_content"
+                android:text="Đối phó: Sử dụng phương pháp quản lý nước hiệu quả, không sử dụng quá liều phân bón, và sử dụng thuốc phun hóa học khi cần thiết."/>
+
+            <TextView
+                android:paddingTop="10dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sâu cuốn lá (Sâu Bướm):"
+                android:textSize="16dp"
+                />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Gây thiệt hại bằng cách ăn lá lúa và cuốn lá lại tạo nơi ẩn náu."/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Đối phó: Sử dụng thuốc phun hóa học hoặc các biện pháp kiểm soát sinh học, như sử dụng ký sinh trùng tự nhiên."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rầy lúa:"
+                android:textSize="16dp"
+                android:paddingTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Hút nước làm mất nước, gây yếu đuối và làm cho cây lúa chết."/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Đối phó: Sử dụng thuốc phun hóa học như imidacloprid hoặc các loại tinh dầu thiên nhiên để kiểm soát rầy. "/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bệnh đạo lúa (bệnh vi khuẩn): "
+                android:textSize="16dp"
+                android:paddingTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Gây mất màu lá, rụng lá, và làm suy giảm năng suất của cây."/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Đối phó: Sử dụng giống cây chống lại bệnh, và kiểm soát bệnh bằng cách sử dụng thuốc phun chống khuẩn. "/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Vết chảy lúa (nấm Ustilago): "
+                android:paddingTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Gây ra các đốm đen, rụng nhũn và mất mùi của lúa. "/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Đối phó: Sử dụng giống lúa chống lại bệnh, thuốc phun hóa học, và luân phiên cây trồng."/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

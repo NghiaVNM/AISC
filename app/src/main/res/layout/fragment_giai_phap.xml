@@ -56,7 +56,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Phủ bạt nước ngọt"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -64,7 +64,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 10.000.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -112,7 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sử dụng máy lọc nước mặn công nghệ RO"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 40.000.000 - 100.000.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -168,7 +168,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bón vôi khử mặn"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -176,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 1.000.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -222,7 +222,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sử dụng giống chịu mặn"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -230,7 +230,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: Tùy loại giống"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -276,7 +276,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mua nước ngọt"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -284,7 +284,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 50.000.000 - 80.000.00"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -330,7 +330,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Kiểm soát độ mặn bằng bút đo"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -338,7 +338,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 300.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -384,7 +384,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Xây dựng hệ thống trữ nước ngọt"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -392,7 +392,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 30.000.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -438,7 +438,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sử dụng hợp chất khoáng Zeolite"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -446,7 +446,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 1.000.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -492,7 +492,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Xây dựng hệ thống tưới nhỏ giọt"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -500,7 +500,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 10.000.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -546,7 +546,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sử dụng bạt phủ đất"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -554,7 +554,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 20.000.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -600,7 +600,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sử Dụng Công Nghệ Nano Cho Màng Lọc"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -608,7 +608,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 500.000.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -654,7 +654,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Xây dựng hệ thống tưới theo rãnh"
-                        android:textSize="15dp"
+                        android:textSize="13dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:paddingLeft="15dp"
@@ -662,7 +662,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chi phí ước tính: 10.000.000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="14dp"/>
+                        android:textSize="11dp"/>
                 </LinearLayout>
 
                 <LinearLayout

@@ -110,6 +110,21 @@ public class TheoDoiFragment extends Fragment {
             }
         });
 
+        Button kt = view.findViewById(R.id.kt);
+        kt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new KyThuatFragment(), false);
+            }
+        });
+
+        Button sb = view.findViewById(R.id.sb);
+        sb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new SauBenhHaiFragment(), false);
+            }
+        });
         return view;
     }
 
